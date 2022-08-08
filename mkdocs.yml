@@ -1,0 +1,11 @@
+site_name: Manny
+site_url: https://devbird007.github.io
+nav:
+    - Introduction: index.md
+    - Tutorial: tut.md
+theme:
+    name: material
+    features:
+      search.suggest
+      search.highlight
+      content.tabs.link
