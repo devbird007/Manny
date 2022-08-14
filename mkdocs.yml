@@ -1,8 +1,7 @@
 site_name: Manny
 site_url: https://Manny.github.io
 nav:
-    - Introduction: index.md
-    - Tutorial: tut.md
+    - Text Substitution with SED: index.md
 theme:
     name: material
     features:
