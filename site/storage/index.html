@@ -181,6 +181,21 @@
 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../home/" class="md-nav__link">
+        Welcome page
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
     
   
   
@@ -457,11 +472,11 @@
                 
 
 
-<h1 id="understanding-block-storage-and-object-storage">Understanding Block Storage and Object Storage</h1>
-<h2 id="introduction">Introduction</h2>
+<h1 id="understanding-block-storage-and-object-storage"><strong>Understanding Block Storage and Object Storage</strong></h1>
+<h2 id="introduction"><strong>Introduction</strong></h2>
 <p><img alt="Image" src="../img/storage.jpg" />  </p>
 <p>In the world of IT, there are different storage solutions available to satisfy the different storage needs businesses will have for their data. Let us look at two popular storage solutions, Block Storage and Object Storage, go over their strengths and weaknesses, and see how they compare to each other.</p>
-<h2 id="block-storage">Block Storage</h2>
+<h2 id="block-storage"><strong>Block Storage</strong></h2>
 <p><img alt="Screenshot" src="../img/block_storage.png" /><br />
 Block storage is a traditional storage format wherein data is broken up into pieces and stored inside blocks of fixed equal sizes. These blocks come with unique identifiers and very limited metadata.</p>
 <p>The unique identifiers are important because they allow for the blocks to be stored across multiple physical storage devices in a network instead of storing them in just one device. They also make it possible for the blocks to be easily tracked and reassembled when a user wants to access that data.</p>
@@ -477,7 +492,7 @@ Block storage is a traditional storage format wherein data is broken up into pie
 <p>Block storage volumes provisioned remotely are like individual hard drives and are usually accessed at the OS level.</p>
 <p>A block storage volume in a cloud environment will typically be decoupled from its server, and this key feature allows you to shut down a server and still retain the data in its storage volume which can then be reattached to another server, all the while incurring zero data loss.</p>
 <p>Block storage does not come with built-in resiliency measures but this can be solved by using erasure coding, RAID, etc., to achieve data redundancy, increased performance and other benefits. These measures can be deployed generally or specifically for mission-critical workloads.</p>
-<h3 id="advantages-of-block-storage">Advantages of Block Storage</h3>
+<h3 id="advantages-of-block-storage"><strong>Advantages of Block Storage</strong></h3>
 <ol>
 <li>
 <p>Block storage volumes are flexible. This means they can be configured to serve a variety of business needs. You can format it with a file system like FAT32, EXT 3, EXT 4, and NTFS. You can set up a database to write straight to your block storage device. You can connect multiple block storage devices to achieve a RAID (Redundant Array of Independent Disks) volume.</p>
@@ -498,7 +513,7 @@ Block storage is a traditional storage format wherein data is broken up into pie
 <p>It also allows for simple management of access privileges.</p>
 </li>
 </ol>
-<h3 id="disadvantages-of-block-storage">Disadvantages of Block Storage</h3>
+<h3 id="disadvantages-of-block-storage"><strong>Disadvantages of Block Storage</strong></h3>
 <ol>
 <li>
 <p>Block storage is a relatively more costly form of storage, this is because it demands significant investment upfront along with a highly skilled maintenance staff. </p>
@@ -510,7 +525,7 @@ Block storage is a traditional storage format wherein data is broken up into pie
 <p>Block storage’s limited metadata capabilities make it impossible to perform advanced search operations.</p>
 </li>
 </ol>
-<h3 id="use-cases-for-block-storage">Use cases for Block Storage</h3>
+<h3 id="use-cases-for-block-storage"><strong>Use cases for Block Storage</strong></h3>
 <ol>
 <li>
 <p>Transactional databases and relational databases in general require low latency, high IOPs data delivery and the ability to perform incremental updates to data files. Block storage excels in these areas.</p>
@@ -531,7 +546,7 @@ Block storage is a traditional storage format wherein data is broken up into pie
 <p>Block storage is very instrumental when working with containers because block volumes allow you to preserve a container's data beyond the container’s typical lifespan.</p>
 </li>
 </ol>
-<h2 id="object-storage">Object Storage</h2>
+<h2 id="object-storage"><strong>Object Storage</strong></h2>
 <p><img alt="Screenshot" src="../img/object_storage.png" /></p>
 <p>Object storage is a more recent form of data storage that rose to popularity in the early 2000s because of how well it helped enterprises around the world to store and manage the voluminous amounts of unstructured data that was being generated due to the growing internet. Trillions of data units in various formats are generated each year and around 80% of the data on the internet is unstructured. With object storage, each data file is stored fully inside a distinct object, and these objects, which could number in the millions or even billions, are organized in a flat-file structure (as opposed to a hierarchy) and stored in a single-level repository.  </p>
 <p>The abstraction of some of the lower levels of storage is one of the core tenets of object storage. Lower-level storage tasks like creating and managing storage volumes to make the most of disk space or configuring RAID levels to handle disk failure no longer need to be carried out. As a result, rather than as blocks, data is accessed and controlled as objects. An object typically contains:</p>
@@ -546,7 +561,7 @@ Block storage is a traditional storage format wherein data is broken up into pie
 <p>And object storage is highly scalable, you could scale your storage up to even petabytes and beyond while still maintaining data integrity. You can scale out simply by adding more nodes to your storage cluster and will usually only be required to pay for the storage space you need.</p>
 <p>Object storage has inbuilt resiliency measures to protect your data. Data stored in objects are replicated multiple times and stored across several storage devices, so your data will always be accessible to you even if there is a fault with one or even several of these storage devices. In case of corruption of one object, you can simply access one of the separately stored copies. This ensures high availability of your data.</p>
 <p>You can also enable object versioning which is a feature that lets you have many different versions of your data. In the case of accidental deletions or updates, you can simply access the previous versions. But under normal circumstances, the most important version to your business or project will be the latest version.</p>
-<h3 id="advantages-of-object-storage">Advantages of Object Storage</h3>
+<h3 id="advantages-of-object-storage"><strong>Advantages of Object Storage</strong></h3>
 <ol>
 <li>
 <p>It provides limitless scalability.</p>
@@ -570,7 +585,7 @@ Block storage is a traditional storage format wherein data is broken up into pie
 <p>Object storage allows for versioning.</p>
 </li>
 </ol>
-<h3 id="disadvantages-of-object-storage">Disadvantages of Object Storage</h3>
+<h3 id="disadvantages-of-object-storage"><strong>Disadvantages of Object Storage</strong></h3>
 <ol>
 <li>
 <p>Objects in object storage are immutable, meaning if you try to make changes to a data file in an object, you would have to re-upload the new file with its changes in a new object, as such it is terrible for storing data that would require consistent updates.</p>
@@ -582,7 +597,7 @@ Block storage is a traditional storage format wherein data is broken up into pie
 <p>Object storage cannot be accessed directly at the OS level without significant degradation in performance.</p>
 </li>
 </ol>
-<h3 id="use-cases-for-object-storage">Use cases for Object Storage</h3>
+<h3 id="use-cases-for-object-storage"><strong>Use cases for Object Storage</strong></h3>
 <ol>
 <li>
 <p>Object storage is extremely useful in the field of big data analytics, this is due to its high scalability and limitless metadata functions.</p>
@@ -603,7 +618,7 @@ Block storage is a traditional storage format wherein data is broken up into pie
 <p>Most object storage services can also deliver data to your users publicly, and this is why it makes for a great choice when looking to host static websites.</p>
 </li>
 </ol>
-<h2 id="block-storage-vs-object-storage">Block Storage vs Object Storage</h2>
+<h2 id="block-storage-vs-object-storage"><strong>Block Storage vs Object Storage</strong></h2>
 <p>Now let’s examine some of the key distinctions between block storage and object storage:  </p>
 <table>
 <thead>
@@ -651,7 +666,7 @@ Block storage is a traditional storage format wherein data is broken up into pie
 </tr>
 </tbody>
 </table>
-<h2 id="conclusion">Conclusion</h2>
+<h2 id="conclusion"><strong>Conclusion</strong></h2>
 <p>Both block storage and object storage have distinct benefits and drawbacks. You can only make the best storage decisions for your business if you’re well informed on the potential uses and associated costs for each of the discussed storage solutions.</p>
 
               
@@ -668,6 +683,21 @@ Block storage is a traditional storage format wherein data is broken up into pie
   
     
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../home/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Welcome page" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Welcome page
+            </div>
+          </div>
+        </a>
       
       
         
