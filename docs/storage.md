@@ -1,12 +1,12 @@
-# Understanding Block Storage and Object Storage
+# **Understanding Block Storage and Object Storage**
 
-## Introduction  
+## **Introduction**  
 ![Image](img/storage.jpg)  
 
 
 In the world of IT, there are different storage solutions available to satisfy the different storage needs businesses will have for their data. Let us look at two popular storage solutions, Block Storage and Object Storage, go over their strengths and weaknesses, and see how they compare to each other.
 
-## Block Storage  
+## **Block Storage**  
 ![Screenshot](img/block_storage.png)  
 Block storage is a traditional storage format wherein data is broken up into pieces and stored inside blocks of fixed equal sizes. These blocks come with unique identifiers and very limited metadata.
 
@@ -29,7 +29,7 @@ A block storage volume in a cloud environment will typically be decoupled from i
 Block storage does not come with built-in resiliency measures but this can be solved by using erasure coding, RAID, etc., to achieve data redundancy, increased performance and other benefits. These measures can be deployed generally or specifically for mission-critical workloads.
 
 
-### Advantages of Block Storage
+### **Advantages of Block Storage**
 1. Block storage volumes are flexible. This means they can be configured to serve a variety of business needs. You can format it with a file system like FAT32, EXT 3, EXT 4, and NTFS. You can set up a database to write straight to your block storage device. You can connect multiple block storage devices to achieve a RAID (Redundant Array of Independent Disks) volume.
 
 2. Boot volumes are block volumes that have been configured to boot an OS for the server they are attached to and this is a very important feature in the cloud space.
@@ -43,7 +43,7 @@ Block storage does not come with built-in resiliency measures but this can be so
 6. It also allows for simple management of access privileges.
 
 
-### Disadvantages of Block Storage
+### **Disadvantages of Block Storage**
 1. Block storage is a relatively more costly form of storage, this is because it demands significant investment upfront along with a highly skilled maintenance staff. 
 
 2. While block storage is highly scalable, when it begins to scale to terabytes and beyond, its complexity increases making it harder to locate a specific data file.
@@ -52,7 +52,7 @@ Block storage does not come with built-in resiliency measures but this can be so
 
 
 
-### Use cases for Block Storage  
+### **Use cases for Block Storage**  
 1. Transactional databases and relational databases in general require low latency, high IOPs data delivery and the ability to perform incremental updates to data files. Block storage excels in these areas.
 
 2. Mission-critical workloads are often run with block storage because of its high performance and swifty data delivery.
@@ -67,7 +67,7 @@ Block storage does not come with built-in resiliency measures but this can be so
 
 
 
-## Object Storage  
+## **Object Storage**  
 ![Screenshot](img/object_storage.png)
 
 Object storage is a more recent form of data storage that rose to popularity in the early 2000s because of how well it helped enterprises around the world to store and manage the voluminous amounts of unstructured data that was being generated due to the growing internet. Trillions of data units in various formats are generated each year and around 80% of the data on the internet is unstructured. With object storage, each data file is stored fully inside a distinct object, and these objects, which could number in the millions or even billions, are organized in a flat-file structure (as opposed to a hierarchy) and stored in a single-level repository.  
@@ -90,7 +90,7 @@ Object storage has inbuilt resiliency measures to protect your data. Data stored
 You can also enable object versioning which is a feature that lets you have many different versions of your data. In the case of accidental deletions or updates, you can simply access the previous versions. But under normal circumstances, the most important version to your business or project will be the latest version.
 
 
-### Advantages of Object Storage  
+### **Advantages of Object Storage**  
 1. It provides limitless scalability.
 
 2. Its flat-file structure allows for easy and quick retrieval of data.
@@ -106,7 +106,7 @@ You can also enable object versioning which is a feature that lets you have many
 7. Object storage allows for versioning.
 
 
-### Disadvantages of Object Storage  
+### **Disadvantages of Object Storage**  
 1. Objects in object storage are immutable, meaning if you try to make changes to a data file in an object, you would have to re-upload the new file with its changes in a new object, as such it is terrible for storing data that would require consistent updates.
 
 2. Its performance is relatively slower than other storage solutions, this is why it is used mostly for cold storage.
@@ -114,7 +114,7 @@ You can also enable object versioning which is a feature that lets you have many
 3. Object storage cannot be accessed directly at the OS level without significant degradation in performance.
 
 
-### Use cases for Object Storage  
+### **Use cases for Object Storage**  
 1. Object storage is extremely useful in the field of big data analytics, this is due to its high scalability and limitless metadata functions.
 
 2. IoT (Internet of Things); object storage is extremely useful for storing and archiving the enormous amounts of unstructured data generated by IoT devices.
@@ -129,7 +129,7 @@ You can also enable object versioning which is a feature that lets you have many
 
 
 
-## Block Storage vs Object Storage  
+## **Block Storage vs Object Storage**  
 Now let’s examine some of the key distinctions between block storage and object storage:  
 
 | Block Storage                                       |                                            Object Storage|
@@ -144,7 +144,7 @@ Now let’s examine some of the key distinctions between block storage and objec
 | Data is broken up into raw blocks and stored in a hierarchical order.| Data is stored whole inside distinct objects organized in a flat-file order.|  
 |It allows for incremental edits to files.| Making changes to files in an object would require the creation of a new object.|
 
-## Conclusion  
+## **Conclusion**
 Both block storage and object storage have distinct benefits and drawbacks. You can only make the best storage decisions for your business if you’re well informed on the potential uses and associated costs for each of the discussed storage solutions.
 
 

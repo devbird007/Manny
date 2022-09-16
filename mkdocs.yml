@@ -1,6 +1,7 @@
 site_name: Manny
 site_url: https://devbird007.github.io/Manny/
 nav:
+    - Welcome page: home.md
     - Understanding Block Storage and Object Storage: storage.md
     - Text Substitution with SED: sed.md
 theme:
