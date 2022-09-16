@@ -1,5 +1,4 @@
 site_name: Manny
-site_url: https://Manny.github.io
 nav:
     - Understanding Block Storage and Object Storage: storage.md
     - Text Substitution with SED: sed.md
