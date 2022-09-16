@@ -1,7 +1,8 @@
 site_name: Manny
 site_url: https://Manny.github.io
 nav:
-    - Text Substitution with SED: index.md
+    - Understanding Block Storage and Object Storage: storage.md
+    - Text Substitution with SED: sed.md
 theme:
     name: material
     features:
