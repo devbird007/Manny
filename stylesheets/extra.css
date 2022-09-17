@@ -1,0 +1,11 @@
+:root > * {
+    --md-primary-fg-color:        #4A148C;
+    --md-primary-fg-color--light: #38d438;
+    --md-primary-fg-color--dark:  #f7f30e;
+  }
+  
+
+
+.twitter {
+    color: #1DA1F2;
+}  
