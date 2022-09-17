@@ -1,11 +1,32 @@
 site_name: Manny
 nav:
-    - Welcome page: index.md
-    - Understanding Block Storage and Object Storage: storage.md
-    - Text Substitution with SED: sed.md
+    # -Home: home.md
+    - Home: index.md
+    - Blog:
+        - Understanding Block Storage and Object Storage: storage.md
+        - Text Substitution with SED: sed.md
 theme:
     name: material
+    palette:
+        primary: deep purple
+        accent: deep purple
+        
     features:
       search.suggest
       search.highlight
       content.tabs.link
+      content.tooltips
+      navigation.indexes
+      navigation.tabs.sticky
+      navigation.instant
+
+markdown_extensions:
+    - attr_list
+    - pymdownx.emoji:
+        emoji_index: !!python/name:materialx.emoji.twemoji
+        emoji_generator: !!python/name:materialx.emoji.to_svg
+
+extra_css:
+  - stylesheets/extra.css
+
+
