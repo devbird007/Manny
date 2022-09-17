@@ -4,8 +4,11 @@
   
     
 
-Hello there! Welcome to my portfolio page. This is a static website created using markdown, generated with MkDocs and currently being hosted on github pages.  
-My name is Emmanuel Taiwo, I am a technical writer and I am training to become a DevOps engineer. I have a passion for technology, specifically the cloud, and I love to share my knowledge and experiences as I go. 
+Hello there! 
+
+Welcome to my portfolio page, which is a static website created using markdown. It was generated with MkDocs and is currently being hosted on github pages.  
+
+My name is Emmanuel Taiwo, I am a technical writer, also training to become a DevOps engineer. I have a passion for technology, specifically the cloud, and I love to share my knowledge and experiences. 
 
 ## **Skills**
 Below is a list of my technical skills:  
