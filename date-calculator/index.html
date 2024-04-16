@@ -1,0 +1,1223 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../storagefordevto/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>Date Calculator - Manny</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#how-to-create-a-date-calculator-with-the-linux-date-command-in-a-shell-script" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Manny" class="md-header__button md-logo" aria-label="Manny" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Manny
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Date Calculator
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Manny" class="md-nav__button md-logo" aria-label="Manny" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Manny
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Date Calculator
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Date Calculator
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-usage-of-the-date-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage of the Date Command
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Usage of the Date Command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Options
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formats
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-creating-a-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1 — Creating a Script
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-writing-the-commands-to-take-in-date-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2 — Writing the Commands to Take In Date Values
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-turning-the-date-strings-into-standard-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3 — Turning the Date Strings Into Standard Format
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-generating-the-dates-day-of-the-week-and-week-of-the-year" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4 — Generating the Dates’ Day-Of-The-Week and Week-Of-The-Year
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4 — Generating the Dates’ Day-Of-The-Week and Week-Of-The-Year">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#determining-the-day-of-the-week" class="md-nav__link">
+    <span class="md-ellipsis">
+      Determining the Day of the Week
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#determining-the-week-of-the-year" class="md-nav__link">
+    <span class="md-ellipsis">
+      Determining the Week of the Year
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-determining-if-the-dates-are-before-noon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5 — Determining if the Dates Are Before Noon
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-calculating-the-difference-between-the-dates-in-a-human-readable-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 6 — Calculating the Difference Between the Dates in a Human-Readable Format
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 6 — Calculating the Difference Between the Dates in a Human-Readable Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-else-statement-to-determine-seconds" class="md-nav__link">
+    <span class="md-ellipsis">
+      If-Else Statement to Determine Seconds
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-else-statement-to-determine-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      If-Else Statement to Determine Minutes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-else-statement-to-determine-hours-and-days" class="md-nav__link">
+    <span class="md-ellipsis">
+      If-Else Statement to Determine Hours and Days
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#printing-out-the-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      Printing out the Result
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storagefordevto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Understanding Block Storage and Object Storage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sedfordevto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Text Substitution With the sed Command in Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-usage-of-the-date-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage of the Date Command
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Usage of the Date Command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Options
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formats
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-creating-a-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1 — Creating a Script
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-writing-the-commands-to-take-in-date-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2 — Writing the Commands to Take In Date Values
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-turning-the-date-strings-into-standard-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3 — Turning the Date Strings Into Standard Format
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-generating-the-dates-day-of-the-week-and-week-of-the-year" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4 — Generating the Dates’ Day-Of-The-Week and Week-Of-The-Year
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4 — Generating the Dates’ Day-Of-The-Week and Week-Of-The-Year">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#determining-the-day-of-the-week" class="md-nav__link">
+    <span class="md-ellipsis">
+      Determining the Day of the Week
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#determining-the-week-of-the-year" class="md-nav__link">
+    <span class="md-ellipsis">
+      Determining the Week of the Year
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-determining-if-the-dates-are-before-noon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5 — Determining if the Dates Are Before Noon
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-calculating-the-difference-between-the-dates-in-a-human-readable-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 6 — Calculating the Difference Between the Dates in a Human-Readable Format
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 6 — Calculating the Difference Between the Dates in a Human-Readable Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-else-statement-to-determine-seconds" class="md-nav__link">
+    <span class="md-ellipsis">
+      If-Else Statement to Determine Seconds
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-else-statement-to-determine-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      If-Else Statement to Determine Minutes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-else-statement-to-determine-hours-and-days" class="md-nav__link">
+    <span class="md-ellipsis">
+      If-Else Statement to Determine Hours and Days
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#printing-out-the-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      Printing out the Result
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="how-to-create-a-date-calculator-with-the-linux-date-command-in-a-shell-script">How To Create a Date Calculator with the Linux <code>date</code> Command in a Shell Script</h1>
+<p><img alt="date image" src="../img/Date-Image.png" /></p>
+<h3 id="introduction">Introduction</h3>
+<p>The <code>date</code> command is a command line utility that displays the computer's current date and time. It is included in the <a href="https://www.gnu.org/software/coreutils/">GNU Core Utilities</a> and is therefore present in all Linux operating systems. While the <code>date</code> command is most commonly used to simply display the current datetime (date and time) in the terminal, it is capable of so much more. The <code>date</code> command allows you to format its output in different ways, set the system's datetime, and even integrate time calculations within shell scripts.</p>
+<p>In this tutorial, you will use the <code>date</code> command in a shell script to build a versatile date calculator. You will craft a script that accepts two datetimes as input, then performs a series of operations on them to extract valuable information. Imagine calculating the precise difference between two dates, down to the very second.</p>
+<p>By the end of this guide, you will gain a profound understanding of the <code>date</code> command and its capabilities. You will be equipped with the necessary skills to conquer date-related calculations. Also, your ability to write and work with shell scripts will see improvements.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>To complete this tutorial, you will need:</p>
+<ul>
+<li>
+<p>Familiarity with using the  <a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal">terminal</a>.</p>
+</li>
+<li>
+<p>A basic understanding of shell scripting, you can follow the guide <a href="https://www.digitalocean.com/community/tutorials/how-to-write-a-simple-shell-script-on-a-vps">How To Write a Simple Shell Script on a VPS</a>.</p>
+</li>
+<li>Some familiarity with if-else statements in shell scripting. If you’d like an introduction or a refresher, you can visit the <a href="https://www.digitalocean.com/community/tutorials/if-else-in-shell-scripts">How to Use if-else in Shell Scripts?</a> tutorial.</li>
+</ul>
+<h2 id="basic-usage-of-the-date-command">Basic Usage of the Date Command</h2>
+<p>To access the <code>date</code> command, type the word into your terminal environment and execute.</p>
+<pre><code class="language-bash">date
+</code></pre>
+<p>The <code>date</code> command will display the current date and time in a standard format.</p>
+<pre><code>Thu Apr  6 11:23:31 EST 2024
+</code></pre>
+<p>The output shows that the current date is Thursday, April 6th, 2024 and the time is 11:23 <span style="font-variant:small-caps;">am</span> The time zone is also displayed, EST (Eastern Standard Time).
+The <code>date</code> command has many options and formats that are used to customize its output. In the succeeding sections, you will see how they work.</p>
+<h3 id="options">Options</h3>
+<p>The <code>date</code> command's options are used to specify the behavior of the <code>date</code> command. For example, the <code>-u</code> option is used to display the date and time in UTC (Coordinated Universal Time) instead of the local time zone.</p>
+<pre><code class="language-bash">date -u
+</code></pre>
+<p>This returns the following output:</p>
+<pre><code>Thu Apr  6 16:40:49 UTC 2024
+</code></pre>
+<p>Another option is <code>-d</code>. This displays the date and time as described by an attached string. Execute the following command to see how it works:</p>
+<pre><code class="language-bash">date -d &quot;2 days ago&quot;
+</code></pre>
+<p>The command's output will then be displayed on the screen:</p>
+<pre><code>Tue Apr  4 11:41:24 EST 2024
+</code></pre>
+<p>You will observe that the printed date is exactly two days before the earlier printed current date. The <code>-d</code> option is not case-sensitive. Here are some more examples of strings that you can parse with <code>-d</code>:</p>
+<ul>
+<li>
+<p>yesterday</p>
+</li>
+<li>
+<p>tomorrow</p>
+</li>
+<li>
+<p>1 week ago</p>
+</li>
+<li>
+<p>Friday</p>
+</li>
+<li>
+<p>12 dec 2018</p>
+</li>
+<li>
+<p>4 July 2022 6:00pm</p>
+</li>
+<li>
+<p>1 apr 2019 13:14:20</p>
+</li>
+</ul>
+<blockquote>
+<p>Note: <code>--date=STRING</code> is another way to use the <code>-d</code> option. It is its longer form.</p>
+</blockquote>
+<h3 id="formats">Formats</h3>
+<p>Formats are used to control the generated output of the <code>date</code> command to get specific information. For example, the <code>%y</code> format will print the last two digits of the current year. See below:</p>
+<pre><code class="language-bash">date +%y
+</code></pre>
+<p>Formats are represented by a percentage sign (<code>%</code>) followed by a letter of the English alphabet. When typing the <code>date</code> command alongside a format, you have to include a plus sign (<code>+</code>) before the format, otherwise, your format will not be recognized.</p>
+<p>The output of the above command will then be:</p>
+<pre><code>24
+</code></pre>
+<p>You can also work with multiple formats at once. To print the current date in the form YYYY-MM-DD, execute the following command:</p>
+<pre><code class="language-bash">date +%Y-%m-%d
+</code></pre>
+<p>You will see an output similar to this:</p>
+<pre><code>2024-04-06
+</code></pre>
+<p>The <code>%Y</code> format is different from <code>%y</code> in that the former prints out the four digits of the year, while the latter prints out only the last two digits. The <code>%m</code> format prints out the number of the month, between 1-12. Finally, the <code>%d</code> format prints out the number of the day of the month between 1-31. You can use these formats individually or combine them as we've seen. The dash (-) separates the figures and can be replaced by a backslash(<code>/</code>) or colon(<code>:</code>).</p>
+<p>To see a complete list of the options and formats of the <code>date</code> command, you can use the <code>--help</code> flag like this:</p>
+<pre><code class="language-bash">date --help
+</code></pre>
+<p>You can use these options and formats to customize the output of the <code>date</code> command to suit your needs.
+In the following sections as you build your date calculator, you will combine several of these options and formats to get desired results.</p>
+<h2 id="step-1-creating-a-script">Step 1 — Creating a Script</h2>
+<p>Navigate to your working directory and create a new script with the following command:</p>
+<pre><code class="language-bash">nano date-calculator.sh
+</code></pre>
+<p>In the first line of your newly-created script, enter in the following:</p>
+<pre><code>#!/bin/sh
+</code></pre>
+<p>This ensures the program loader recognizes the file as a shell script and will run the commands contained within it.
+Save with <code>CTRL+O</code> and exit the text editor with <code>CTRL+X</code>.</p>
+<p>Now make the script executable with the following command:</p>
+<pre><code class="language-bash">chmod +x date-calculator.sh
+</code></pre>
+<p>With that out of the way, you can now get into the nitty-gritty of building your date-calculator shell script. In the next step, you will begin typing the commands to accept the input dates in your shell script.</p>
+<h2 id="step-2-writing-the-commands-to-take-in-date-values">Step 2 — Writing the Commands to Take In Date Values</h2>
+<p>Your script will need to take in the dates (and times) that it will perform operations on. Open your script with the following command:</p>
+<pre><code class="language-bash">nano date-calculator.sh
+</code></pre>
+<p>Now enter these lines into your script:</p>
+<pre><code class="language-bash"># To take in date values
+
+echo &quot;Enter the first date: &quot;
+read -r first_date
+echo &quot;Enter the second date: &quot;
+read -r second_date
+</code></pre>
+<p>Adding comments to your script makes it easier to read and helps you understand at a quick glance what each set of commands do. There are several such comments you will include in different sections as you write your shell script.</p>
+<p>The <code>read</code> command lets your shell script read lines from standard input (stdin) and stores them as strings in the specified variables, which are <code>first_date</code> and <code>second_date</code> in this case.</p>
+<p>The <code>-r</code> flag prevents the <code>read</code> command from mangling backslashes.</p>
+<p>The date values accepted in by your script will be in the form of strings. Throughout the rest of this tutorial, you will reference the variables(<code>first_date</code> &amp; <code>second_date</code>) containing these date values so that date operations can then be performed on them.</p>
+<h2 id="step-3-turning-the-date-strings-into-standard-format">Step 3 — Turning the Date Strings Into Standard Format</h2>
+<p>The first operation your script will perform on the date values is to convert them from strings to a clear format. This format is the <code>yyyy-mm-dd HH:MM:SS</code> format. Enter the following lines into your script:</p>
+<pre><code class="language-bash"># To convert the date strings into standard format
+
+first_dt=$(date -d &quot;$first_date&quot; +&quot;%Y-%m-%d %H:%M:%S&quot;)
+second_dt=$(date -d &quot;$second_date&quot; +&quot;%Y-%m-%d %H:%M:%S&quot;)
+</code></pre>
+<p>You do not want the operations to be performed on the current date, so you'll have to use the <code>-d</code> option to specify the desired dates. In this case, these are the dates contained within the variables <code>first_date</code> and <code>second_date</code>. To specify the format of the output, you enter the plus sign (+) followed by the desired format keys.</p>
+<p>The results are stored within two new variables <code>first_dt</code> and <code>second_dt</code>. Next, you will enter <code>echo</code> commands to print out the formatted dates. See below:</p>
+<pre><code class="language-bash">echo &quot;\nStandard format for the first date: $first_dt&quot;
+echo &quot;Standard format for the second date: $second_dt\n&quot;
+</code></pre>
+<blockquote>
+<p>Note: The <code>\n</code> sequence is used to print a new line. It is important to include this in your script so all your outputs don't end up clumped together on a single line when you execute your script at the end of this tutorial. It will appear in multiple places throughout this guide.</p>
+</blockquote>
+<p>Now, the date strings will be turned into a clear format and printed out on the screen. Here is an example of what the output would look like:</p>
+<pre><code>Standard format for the first date: 2020-11-23 05:30:15
+Standard format for the second date: 2023-03-16 10:15:30
+...
+</code></pre>
+<p>Next, you will perform the operations to obtain information about the date values.</p>
+<h2 id="step-4-generating-the-dates-day-of-the-week-and-week-of-the-year">Step 4 — Generating the Dates’ Day-Of-The-Week and Week-Of-The-Year</h2>
+<p>To obtain more information that is not immediately apparent about the date values that are accepted as input, there are specific date formats you can use. In this section, you will write commands to determine the day of the week(the weekday) and the week of the year of each date.</p>
+<h3 id="determining-the-day-of-the-week">Determining the Day of the Week</h3>
+<p>The date format that prints the day of the week (Monday-Sunday) is <code>%A</code>. Now, to find the weekday of our chosen dates, enter the following into your script:</p>
+<pre><code class="language-bash"># To determine the day of the week
+
+first_weekday=$(date -d &quot;$first_date&quot; +%A)
+second_weekday=$(date -d &quot;$second_date&quot; +%A)
+</code></pre>
+<p>Recall, the <code>-d</code> option lets you specify your desired date. The results of the operations performed in the preceding code block are stored in two new variables <code>first_weekday</code> and <code>second_weekday</code>. </p>
+<p>Enter the following code into your script so the results may be printed out upon execution:</p>
+<pre><code class="language-bash">echo &quot;First date's weekday: $first_weekday&quot;
+echo &quot;Second date's weekday: $second_weekday\n&quot;
+</code></pre>
+<p>Depending on the date values, your final result for this operation when you run your script will look like this:</p>
+<pre><code>...
+First date's weekday: Tuesday
+Second date's weekday: Friday
+...
+</code></pre>
+<h3 id="determining-the-week-of-the-year">Determining the Week of the Year</h3>
+<p>There are about 52 weeks in a year. To find the week when the dates occur,  there is a format present that carries out this function. This is the <code>%V</code> format. To perform this operation, enter the following into your script:</p>
+<pre><code class="language-bash"># To determine the week of the year
+
+week_number1=$(date -d &quot;$first_date&quot; +%V)
+week_number2=$(date -d &quot;$second_date&quot; +%V)
+</code></pre>
+<p>Again, you will store the results into new variables (<code>week_number1</code> &amp; <code>week_number2</code>), then you will use these variables when entering the commands to print out the final result.</p>
+<pre><code class="language-bash">echo &quot;Week of the first date: $week_number1&quot;
+echo &quot;Week of the second date: $week_number2\n&quot;
+</code></pre>
+<p>The number that will be printed for each date will be between 1-52. The output will look like this:</p>
+<pre><code>...
+Week of the first date: 12
+Week of the second date: 44
+...
+</code></pre>
+<p>Next, you will use the date values in conditional statements to extract even more interesting information about them.</p>
+<h2 id="step-5-determining-if-the-dates-are-before-noon">Step 5 — Determining if the Dates Are Before Noon</h2>
+<p>To determine if the time associated with your dates occur before noon of that day, i.e before 12:00, you will need an if-else statement. </p>
+<p>First, you need to extract the digits necessary for this operation from the accepted date strings. These are specifically the digits of the hours and minutes, <code>HH:MM</code>. Enter the following into your script:</p>
+<pre><code class="language-bash"># To determine if the dates are before noon
+
+time_one=$(date -d &quot;$first_date&quot; +&quot;%H%M&quot;)
+time_two=$(date -d &quot;$second_date&quot; +&quot;%H%M&quot;)
+</code></pre>
+<p>The values are assigned to two new variables, <code>time_one</code> &amp; <code>time_two</code>. These are the variables that will be used in the if-else statement. </p>
+<p>Notice that there is no separator between the formats for hours(<code>%H</code>) and minutes(<code>%M</code>). This is so that it is possible to take them as whole numbers to compare against 12:00 which will be represented by <code>1200</code>. Enter the following lines into your script to see how it works:</p>
+<pre><code class="language-bash">if [ &quot;$time_one&quot; -lt 1200 ]; then
+    echo &quot;The time is before noon.&quot;
+else
+    echo &quot;The time is after noon.&quot;
+fi
+
+if [ &quot;$time_two&quot; -lt 1200 ]; then
+    echo &quot;The time is before noon.\n&quot;
+else
+    echo &quot;The time is after noon.\n&quot;
+fi
+</code></pre>
+<p>If the first date has a time that is 05:12. Then the <code>time_one</code> variable will be <strong>0512</strong>. This is then compared against 12:00 which is represented as <strong>1200</strong>. The value 0512 is lower than 1200 so the statement "<strong>The time is before noon.</strong>" will be printed to output. This maps nicely to the fact that the time 05:12 is in fact before 12:00, so your if-else conditional statement works accurately for its intended purpose, deterimining if the time in your date value comes before or after noon.</p>
+<p>Next, you will perform an even more complex if-else operation on the date values.</p>
+<h2 id="step-6-calculating-the-difference-between-the-dates-in-a-human-readable-format">Step 6 — Calculating the Difference Between the Dates in a Human-Readable Format</h2>
+<p>To find the difference in time between your two original date values in a readable format, you will need to first find the difference in seconds. </p>
+<p>The <code>%s</code> format lets you convert a given date to the number of seconds that have passed since the Unix epoch (<code>January 01, 1970, 00:00:00 UTC</code>) up until that date.</p>
+<p>To find the difference between the dates in seconds, enter the following lines into your script:</p>
+<pre><code class="language-bash"># To calculate the difference in seconds
+
+fdate_seconds=$(date --date=&quot;$first_date&quot; +%s)
+sdate_seconds=$(date --date=&quot;$second_date&quot; +%s)
+
+num=$(( sdate_seconds - fdate_seconds ))
+</code></pre>
+<p>The date values are converted into seconds since Unix epoch and are stored in two new variables <code>fdate_seconds</code> &amp; <code>sdate_seconds</code>. The difference is then calculated and stored in a new variable, <code>num</code>.</p>
+<p>Now that you have the difference in seconds contained inside <code>num</code>, you will write if-else statements to perform arithmetic operations to convert it from mere seconds into a format denoting days, hours, minutes and then seconds. This is a sample of the target output we are trying to generate:</p>
+<pre><code>84d 14h 6m 32s between Jan 12 2024 8pm and yesterday.
+</code></pre>
+<p>Prior to starting these operations, declare your variables and equate them to a default value of zero, like this:</p>
+<pre><code class="language-bash"># Declaring variables
+sec=0
+min=0
+hour=0
+day=0
+</code></pre>
+<p>You may now begin the arithmetic operations.</p>
+<h3 id="if-else-statement-to-determine-seconds">If-Else Statement to Determine Seconds</h3>
+<p>You will first write an if-else statement that performs modulo and division operations to determine the final value for seconds.</p>
+<pre><code class="language-bash"># Writing the if-else statement to determine seconds
+
+if [ &quot;$num&quot; -gt 59 ]; then
+    sec=$(( num%60 ))
+    num=$(( num/60 ))
+else
+    sec=&quot;$num&quot;
+fi
+</code></pre>
+<p>The final value of the number of seconds will be between 0-59, so the if statement determines if the <code>num</code> variable contains a value greater than 59 before performing operations on it. </p>
+<p>If the value is greater than 59, then the <code>sec</code> variable will be set to the result of "<code>num</code> modulo 60". This will generate a digit between 0 and 59.</p>
+<p>Next, the <code>num</code> variable is set to the whole number generated when <code>num</code> is divided by 60. This new result for <code>num</code> is what will be used in further operations.</p>
+<p>If however <code>num</code> is not greater than 59, the script appropriately sets the value of <code>sec</code> to the value of <code>num</code> and ends the operation.</p>
+<p>Next, another if-else operation will be written to determine the appropriate number of minutes.</p>
+<h3 id="if-else-statement-to-determine-minutes">If-Else Statement to Determine Minutes</h3>
+<p>In this step, you will write another if-else statement nested within the previous one. This will only be executed if the first condition in the previous if-else statement is true—that is, <code>num</code> is greater than 59. </p>
+<p>This if-else statement will take the last set value of <code>num</code> and perform a similar operation to determine the final value of the number of minutes. This is represented by the <code>min</code> variable.</p>
+<pre><code>
+# Writing the if-else statement to determine seconds
+
+if [ "$num" -gt 59 ]; then
+    sec=$(( num%60 ))
+   num=$(( num/60 ))
+
+    <b># Writing the if-else statement to determine minutes
+
+    if [ "$num" -gt 59 ]; then
+        min=$(( num%60 ))
+        num=$(( num/60 ))
+    else
+        min="$num"
+    fi</b>
+else
+    sec="$num"
+fi
+</code></pre>
+
+<p>The highlighted section in the preceding code block is the new if-else statement nested inside the previous one. </p>
+<p>The final value of the number of minutes must also be within 0-59, so this if-statement checks if the new <code>num</code> value is greater than 59 or not.</p>
+<p>If it is, it sets the <code>min</code> variable to the result of the operation <code>num</code> modulo 60, as this will result in a number between 0-59. </p>
+<p><code>num</code> is again set to the result of the operation "<code>num</code>/60". This will be used in the next operation to determine the number of hours. </p>
+<p>If however <code>num</code> is now no longer greater than 59, the code sets the value of <code>min</code> to the value of <code>num</code> and ends the operations.</p>
+<p>Now, you will write a final if-else statement to determine the final number of hours and days together.</p>
+<h3 id="if-else-statement-to-determine-hours-and-days">If-Else Statement to Determine Hours and Days</h3>
+<p>Here, your if-else statement will determine the values for both hours and days, represented by the variables <code>hour</code> &amp; <code>day</code>. </p>
+<p>This will also be nested in the previous conditional statement and will only be triggered if the latest value of <code>num</code> is greater than 23. A single day is composed of 24 hours, so you would expect a value for <code>hour</code> to fall within 0-23. </p>
+<p>The value for <code>day</code> will be whatever is left at the end of the operation. Enter the highlighted section into your script:</p>
+<pre><code>
+# Writing the if-else statement to determine seconds
+
+if [ "$num" -gt 59 ]; then
+    sec=$(( num%60 ))
+    num=$(( num/60 ))
+
+    # Writing the if-else statement to determine minutes
+
+    if [ "$num" -gt 59 ]; then
+        min=$(( num%60 ))
+        num=$(( num/60 ))
+
+        <b># Writing the if-else statement to determine hours
+
+        if [ "$num" -gt 23 ]; then
+            hour=$(( num%24 ))
+            day=$(( num/24 ))
+        else
+            hour="$num"
+        fi</b>
+    else
+        min="$num"
+    fi
+else
+    sec="$num"
+fi
+</code></pre>
+
+<p>You will notice that instead of setting the result of "<code>num</code>/24" to <code>num</code>, it has been assigned to <code>day</code>. This is due to the fact that this is the last operation to be performed on the <code>num</code> variable, you no longer need to use it in any other statements. It is now set to the <code>day</code> variable and will be printed out as the total number of days.</p>
+<p>Although, if <code>num</code> is less than 23, then <code>hour</code> will be equal to the value of  <code>num</code>.</p>
+<p>Finally, you will write commands to display the results of the operations in a presentable format.</p>
+<h3 id="printing-out-the-result">Printing out the Result</h3>
+<p>To print out the results, you will now call the variables <code>day</code>, <code>hour</code>, <code>min</code> and <code>sec</code>. Enter the following into your script:</p>
+<pre><code class="language-bash"># To display the result
+
+echo &quot;${day}d ${hour}h ${min}m ${sec}s between $first_date and $second_date.&quot;
+</code></pre>
+<p>You will also reference the original variables <code>first_date</code> &amp; <code>second_date</code> that store the date values whose difference you are calculating.</p>
+<p>An example of what the output would look like is this:</p>
+<pre><code>2d 0h 0m 0s between yesterday and tomorrow.
+</code></pre>
+<p>Your shell script date calculator is finally complete. Run it with the following command:</p>
+<pre><code class="language-bash">./date-calculator.sh
+</code></pre>
+<p>Enter any two dates when prompted and watch it work effortlessly. Below is an example of what the final output of your date-calculator's operations would look like:</p>
+<pre><code>Enter the first date:
+1 Jan 2016 05:12:12
+Enter the second date:
+yesterday 6pm
+
+Standard format for the first date: 2016-01-01 05:12:12
+Standard format for the second date: 2024-04-10 18:00:00
+
+First date's weekday: Thursday
+Second date's weekday: Monday
+
+Week of the first date: 01
+Week of the second date: 15
+
+The time is before noon.
+The time is after noon.
+
+3021d 12h 47m 48s between 1 Jan 2016 05:12:12 and yesterday 6pm.
+</code></pre>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this article, you created a versatile date-calculator that takes in the values of two dates and does a lot of date-related operations on them to generate some pretty interesting results. Now, you know a lot about the <code>date</code> command, and you have improved your shell scripting skills. You can go on to tackle even more complex scripting projects.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": "search.suggest search.highlight content.tabs.link content.tooltips navigation.indexes navigation.tabs.sticky navigation.instant", "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+    
+  </body>
+</html>

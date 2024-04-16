@@ -1,0 +1,1126 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../storagefordevto/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>Text Substitution With the sed Command in Linux - Manny</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#text-substitution-with-the-sed-command-in-linux" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Manny" class="md-header__button md-logo" aria-label="Manny" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Manny
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Text Substitution With the sed Command in Linux
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../date-calculator/" class="md-tabs__link">
+          
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Manny" class="md-nav__button md-logo" aria-label="Manny" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Manny
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../date-calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Date Calculator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storagefordevto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Understanding Block Storage and Object Storage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Text Substitution With the sed Command in Linux
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Text Substitution With the sed Command in Linux
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a File
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-basic-syntax-of-sed" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Basic Syntax of sed
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#substituting-specific-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      Substituting Specific Instances
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#substituting-all-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      Substituting All instances
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigating-case-insensitive-substitutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigating Case-Insensitive Substitutions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#substituting-text-on-specific-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Substituting Text on Specific Lines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#substituting-text-in-a-range-of-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Substituting Text in a Range of Lines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#making-multiple-sed-substitutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Making Multiple sed Substitutions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Making Multiple sed Substitutions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-using-pipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Using Pipe |
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-using-the-e-option" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Using the -e Option
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-using-the-semicolon" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Using the Semicolon ;
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#printing-edited-lines-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      Printing Edited Lines Only
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delimiters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delimiters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saving-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Saving Changes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saving-changes-to-a-new-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Saving Changes to a New File
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#making-a-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Making a Backup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a File
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-basic-syntax-of-sed" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Basic Syntax of sed
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#substituting-specific-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      Substituting Specific Instances
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#substituting-all-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      Substituting All instances
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigating-case-insensitive-substitutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigating Case-Insensitive Substitutions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#substituting-text-on-specific-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Substituting Text on Specific Lines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#substituting-text-in-a-range-of-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Substituting Text in a Range of Lines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#making-multiple-sed-substitutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Making Multiple sed Substitutions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Making Multiple sed Substitutions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-using-pipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Using Pipe |
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-using-the-e-option" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Using the -e Option
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-using-the-semicolon" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Using the Semicolon ;
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#printing-edited-lines-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      Printing Edited Lines Only
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delimiters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delimiters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saving-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Saving Changes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saving-changes-to-a-new-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Saving Changes to a New File
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#making-a-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Making a Backup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="text-substitution-with-the-sed-command-in-linux">Text Substitution with the sed command in Linux</h1>
+<p><img alt="sedlogo" src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/insmcc96jaxvbq1ofso0.png" /></p>
+<h3 id="introduction">Introduction</h3>
+<p><code>sed</code> is a powerful tool often used in the Linux terminal to edit text documents without opening them. The word "sed" is a contraction of the phrase "Stream Editor". It is essentially a tool for editing streams of text. <code>sed</code> takes in text from a file or text received from standard input (stdin) and lets you perform some operations on it. In this tutorial, I will demonstrate how <code>sed</code> can be used to make string substitutions in text files in the Linux command-line environment.</p>
+<h2 id="creating-a-file">Creating a File</h2>
+<p>First, open your Linux terminal and navigate to your home directory if you aren't there already. Create a new file with the <code>cat</code> command by following the succeeding code block:</p>
+<pre><code class="language-bash">cat &lt;&lt; EOF &gt; myfile.txt
+This is my box.
+It is mine.
+My box is big, it is a big box.
+My box is black, my box is strong, my box is the best.
+My mother bought it for me.
+Let's go to the sandbox to play with my box.
+EOF
+</code></pre>
+<p>This is the sample file which we will perform most of our <code>sed</code> operations on. In the next section, you will begin to see how the <code>sed</code> command is fundamentally used to alter and substitute text.</p>
+<h2 id="the-basic-syntax-of-sed">The Basic Syntax of <code>sed</code></h2>
+<p>The most common way in which you will use <code>sed</code> is this:</p>
+<pre><code class="language-bash">sed 's/OLD-WORD/NEW-WORD/' FILENAME
+</code></pre>
+<p>You start with typing the <code>sed</code> keyword which lets the computer know you want to access the stream editor tool. </p>
+<p><code>s</code> is the search operator that looks through the file.</p>
+<p>Next, you enter the word you want to substitute out or replace which is the <code>OLD-WORD</code>, and the word you want to substitute in which is the <code>NEW-WORD</code>. </p>
+<p>Then you enter the name of the target file <code>FILENAME</code> you wish to perform this <code>sed</code> operation on. </p>
+<p>The forward slash <code>/</code> which separates each keyword is called a delimiter, more on delimiters will be explained later.</p>
+<p>Now, using the <code>sed</code> command in the file you created earlier, <strong>myfile.txt</strong>, you will attempt to replace instances of the old word <strong>box</strong> with a new word <strong>bag</strong>.</p>
+<p>Enter the following command and press <code>ENTER</code>:</p>
+<pre><code class="language-bash">sed 's/box/bag/' myfile.txt
+</code></pre>
+<p>Immediately, the following output is displayed:</p>
+<pre>
+This is my <b>bag</b>.
+It is mine.
+My <b>bag</b> is big, it is a big box.
+My <b>bag</b> is black, my box is strong, my box is the best.
+My mother bought it for me.
+Let's go to the <b>sandbag</b> to play with my box.
+</pre>
+
+<p>You may notice that the word <strong>sandbox</strong> has been altered to <strong>sandbag</strong>. This occurs because the <code>sed</code> command acts on text patterns it encounters, not simply the standalone word.</p>
+<p>You may also observe that on each line, only the first instance of <strong>box</strong> is changed to <strong>bag</strong>. The rest are left unchanged. You can look at the highlighted words in the generated output to observe this.</p>
+<blockquote>
+<p>Note: The file <strong>myfile.txt</strong> itself remains unchanged. By default the <code>sed</code> command prints the result of its operation to standard output (stdout). More on how to permanently save your edits will be covered later.</p>
+</blockquote>
+<h2 id="substituting-specific-instances">Substituting Specific Instances</h2>
+<p>By default, only the first instance of the specified text is altered. If you wish to change the order of the affected instance, you type in the following:</p>
+<pre><code class="language-bash">sed 's/box/bag/2' myfile.txt
+</code></pre>
+<p>The following output is displayed in your terminal upon execution:</p>
+<pre>
+This is my box.
+It is mine.
+My box is big, it is a big <b>bag</b>.
+My box is black, my <b>bag</b> is strong, my box is the best.
+My mother bough it for me.
+Let's go to the sandbox to play with my <b>bag</b>.
+</pre>
+
+<p>In the command entered, you'll notice that we've added a number <strong>2</strong>. What this does is, it makes it so that on each line where <strong>box</strong> appears, it isn't the first instance that is altered, but rather, the second instance. Looking at the generated output, you will be able to observe this.</p>
+<p>You may replace <strong>2</strong> with any number to denote which instance of the old word you wish to substitute out for your new word.</p>
+<h2 id="substituting-all-instances">Substituting All instances</h2>
+<p>If you wish for every instance of the old word <strong>box</strong> in the file to be replaced with the new word <strong>bag</strong>, enter the following command:</p>
+<pre><code class="language-bash">sed 's/box/bag/g' myfile.txt
+</code></pre>
+<p>You should see this output:</p>
+<pre>
+This is my <b>bag</b>.
+It is mine.
+My <b>bag</b> is big, it is a big <b>bag</b>.
+My <b>bag</b> is black, my <b>bag</b> is strong, my <b>bag</b> is the best.
+My mother bought it for me.
+Let's go to the <b>sandbag</b> to play with my <b>bag</b>.
+</pre>
+
+<p>The <code>g</code> flag added indictates you want to make the substitution globally, i.e everywhere the old word occurs in the file.</p>
+<h2 id="navigating-case-insensitive-substitutions">Navigating Case-Insensitive Substitutions</h2>
+<p>The <code>sed</code> command is by default case-sensitive. Using the <code>i</code> flag in your <code>sed</code> operation helps you make case-insensitive substitutions. This is for situations where you wish to find and replace instances of the old word regardless of the letter case they may be in. Below is an example:</p>
+<pre><code class="language-bash">sed 's/BOX/bag/i' myfile.txt
+</code></pre>
+<p>The output:</p>
+<pre>
+This is my <b>bag</b>.
+It is mine.
+My <b>bag</b> is big, it is a big box.
+My <b>bag</b> is black, my box is strong, my box is the best.
+My mother bought it for me.
+Let's go to the <b>sandbag</b> to play with my box.
+</pre>
+
+<p>You'll observe that even though <strong>BOX</strong> is used in the command, instances of its lower-case, <strong>box</strong>, in the file are altered. The substitution wouldn't work without the <code>i</code> flag, you can try this out in your terminal environment to see.</p>
+<p>In the next section, we will see how to make changes on designated lines.</p>
+<h2 id="substituting-text-on-specific-lines">Substituting Text on Specific Lines</h2>
+<p>To find and replace a text pattern on a specific line, instead of all the lines in the file, use the following command:</p>
+<pre><code class="language-bash">sed '3 s/box/bag' myfile.txt
+</code></pre>
+<p>Generated output:</p>
+<pre>
+This is my box.
+It is mine.
+My <b>bag</b> is big, it is a big box.
+My box is black, my box is strong, my box is the best.
+My mother bought it for me.
+Let's go to the sandbox to play with my box.
+</pre>
+
+<p>In the preceding generated output, you will observe that only the first instance of <strong>box</strong> on the third line has been substituted out. Placing the number <code>3</code> before <code>s</code> tells the computer that in <code>myfile.txt</code> you want to find and replace the word <strong>box</strong> for <strong>bag</strong> in the third line only. </p>
+<p>Also, you can change that number to whatever line number you want your substitution made instead.</p>
+<blockquote>
+<p>Note: If you have a large file, to display the line numbers, enter this command:<br />
+<code>sed = myfile.txt</code></p>
+</blockquote>
+<h2 id="substituting-text-in-a-range-of-lines">Substituting Text in a Range of Lines</h2>
+<p>To find and replace text in a range of lines:</p>
+<pre><code class="language-bash">sed '1,3 s/box/bag/' myfile.txt
+</code></pre>
+<p>The displayed output</p>
+<pre>
+This is my <b>bag</b>.
+It is mine.
+My <b>bag</b> is big, it is a big box.
+My box is black, my box is strong, my box is the best.
+My mother bought it for me.
+Let's go to the sandbox to play with my box
+</pre>
+
+<p>In the <code>sed</code> command entered, the first number is followed by the second number and a comma separates them. This command lets the computer know that you want your <code>sed</code> substitutions to be made within the range of line 1 to line 3.</p>
+<p>In the next section, we will experiment with different ways of how to execute multiple <code>sed</code> substitutions at a go.</p>
+<h2 id="making-multiple-sed-substitutions">Making Multiple <code>sed</code> Substitutions</h2>
+<p>At times, you may wish to use the <code>sed</code> command multiple times on the same text file, there are various ways for you to execute this in one command entry in the Linux terminal.</p>
+<p>To demonstrate this, you will substitute the words <strong>box</strong> with <strong>bag</strong> and <strong>black</strong> with <strong>red</strong> in the text file we created, <strong>myfile.txt</strong>. This can be done using any of the following methods:  </p>
+<h3 id="1-using-pipe">1. Using Pipe <code>|</code></h3>
+<p>Enter in the following command:</p>
+<pre><code class="language-bash">sed 's/box/bag/' myfile.txt | sed 's/black/red/'
+</code></pre>
+<p>The output:</p>
+<pre>
+This is my <b>bag</b>.
+It is mine.
+My <b>bag</b> is big, it is a big box.
+My <b>bag</b> is <b>red</b>, my box is strong, my box is the best.
+My mother bought it for me.
+Let's go to the <b>sandbag</b> to play with my box
+</pre>
+
+<p>Remember, <code>sed</code> is a <strong>Stream Editor</strong>. It prints out to standard output(stdout) and can also take in text piped in from standard input(stdin). In the above scenario, the output from the first <code>sed</code> substitution is piped in to the next <code>sed</code> command to make its own substitutions too. This lets us make multiple <code>sed</code> substitutions at once.</p>
+<h3 id="2-using-the-e-option">2. Using the <code>-e</code> Option</h3>
+<p>You may use the <code>-e</code> option provided by <code>sed</code> to conveniently execute multiple <code>sed</code> substitutions at a go. See below:</p>
+<pre><code class="language-bash">sed -e 's/box/bag/' -e 's/black/red/' myfile.txt
+</code></pre>
+<p>Output:</p>
+<pre>
+This is my <b>bag</b>.
+It is mine.
+My <b>bag</b> is big, it is a big box.
+My <b>bag</b> is <b>red</b>, my box is strong, my box is the best.
+My mother bought it for me.
+Let's go to the <b>sandbag</b> to play with my box
+</pre>
+
+<h3 id="3-using-the-semicolon">3. Using the Semicolon <code>;</code></h3>
+<p>The semicolon <code>;</code> allows you to quickly conjoin your multiple <code>sed</code> commands and execute them at once on the same file. See below:</p>
+<pre><code class="language-bash">sed 's/box/bag/;s/black/red/' myfile.txt
+</code></pre>
+<p>Printed output:</p>
+<pre>
+This is my <b>bag</b>.
+It is mine.
+My <b>bag</b> is big, it is a big box.
+My <b>bag</b> is <b>red</b>, my box is strong, my box is the best.
+My mother bought it for me.
+Let's go to the <b>sandbag</b> to play with my box
+</pre>
+
+<p>We've seen the different ways available that help facilitate executing multiple <code>sed</code> substitutions at a go. In the next section we will go over what happens when you only want the lines you've altered returned to output. </p>
+<h2 id="printing-edited-lines-only">Printing Edited Lines Only</h2>
+<p>If you are working on a huge file, and you don't want the output of your <code>sed</code> commands on the file filling up your terminal environment each time you make an execution. There is a method you can use to isolate and output only the lines of the file your command has altered. See below:</p>
+<pre><code class="language-bash">sed -n 's/box/bag/p' myfile.txt
+</code></pre>
+<p>This is the generated output:</p>
+<pre>
+This is my <b>bag</b>.
+My <b>bag</b> is big, it is a big box.
+My <b>bag</b> is black, my box is strong, my box is the best.
+Let's go to the <b>sandbag</b> to play with my box
+</pre>
+
+<p>In the command executed we use the <code>-n</code> option and the <code>p</code> flag. The <code>-n</code> option suppresses automatic printing of the output. Meanwhile, the <code>p</code> flag causes double printing of the edited lines. The combination of these two will cause the command to print out the edited lines only.</p>
+<blockquote>
+<p>Note: <code>sed</code> provides a whole lot of options and flags you can use to make all kinds of tweaks to your substitutions. To access them, you simply enter <code>sed --help</code> into your terminal or <code>man sed</code> for the full user manual.</p>
+</blockquote>
+<h2 id="delimiters">Delimiters</h2>
+<p>So far, we've been using the forward-slash <code>/</code> as a delimiter to separate the relevant categories of our substitution commands in the terminal. Although, there will be situations where this will not suffice. </p>
+<p>For example if you're trying to use <code>sed</code> on a URL, a URL already has forward slashes <code>/</code> so an error will occur if you try to use a forward-slash(/) as a delimiter. Fortunately, other special characters can be used as delimiters too. </p>
+<p>Let us try to make a <code>sed</code> substitution on the URL <code>https://www.wikipedia.org/homepage.html</code>. We will take the text pattern <strong>org/homepage</strong> and replace it with <strong>inc/search</strong>. See below:</p>
+<pre><code class="language-bash">echo &quot;https://www.wikipedia.org/homepage.html&quot; | sed 's$org/homepage$inc/search$'
+</code></pre>
+<p>The resulting output:</p>
+<pre>
+https://www.wikipedia.<b>inc/search</b>.html
+</pre>
+
+<p>In the command entered, notice that we now use a dollar-sign <code>$</code> as a delimiter to separate the text we want to substitute out <strong>org/homepage</strong> and the text to be substituted in <strong>inc/search</strong>. If we had tried using the forward-slash <code>/</code> as a delimiter, the operation wouldn't have been successful.</p>
+<h2 id="saving-changes">Saving Changes</h2>
+<p>It is not enough to only make our edits in stream, you may wish to have the files altered permanently. To make the changes permanent, you must pass the <code>-i</code> option. See below for an example acting on the earlier created <strong>myfile.txt</strong> file:</p>
+<pre><code class="language-bash">sed -i 's/black/red/' myfile.txt
+</code></pre>
+<p>To confirm that the file has been altered, you will open it with the <code>cat</code> command like this:</p>
+<pre><code class="language-bash">cat myfile.txt
+</code></pre>
+<p>The result:</p>
+<pre>
+This is my box.
+It is mine.
+My box is big, it is a big box.
+My box is <b>red</b>, my box is strong, my box is the best.
+My mother bought it for me.
+Let's go to the sandbox to play with my box.
+</pre>
+
+<p>Owing to the <code>-i</code> option, we have now confirmed that the old word <code>black</code> has been replaced with a new word <code>red</code> permanently.</p>
+<blockquote>
+<p>Note: It is not advised to use the <code>-i</code> option casually because doing so could cause you to permanently lose your data. Use it only when you are certain you want to make irreversible changes.</p>
+</blockquote>
+<h2 id="saving-changes-to-a-new-file">Saving Changes to a New File</h2>
+<p>Suppose instead you wanted to save your changes to a new file leaving the first one unaltered. Enter the following command:</p>
+<pre><code class="language-bash">sed 's/box/bag/g' myfile.txt &gt; secondfile.txt
+</code></pre>
+<p>If the file <strong>secondfile.txt</strong> did not exist, it is created automatically in your present working directory with the output generated from the <code>sed</code> command executed. </p>
+<p>If you open the file with the command <code>cat secondfile.txt</code>, you should see the following:</p>
+<pre>
+This is my <b>bag</b>.
+It is mine.
+My <b>bag</b> is big, it is a big <b>bag</b>.
+My <b>bag</b> is red, my <b>bag</b> is strong, my <b>bag</b> is the best.
+My mother bought it for me.
+Let's go to the <b>sandbag</b> to play with my <b>bag</b>.
+</pre>
+
+<h2 id="making-a-backup">Making a Backup</h2>
+<p>You can also pass an option that tells the computer to permanently edit the file but create a backup of the original document. To do this, you type out a variation of the <code>-i</code> option, which is the <code>-i.bak</code> option. It is used like this:</p>
+<pre><code class="language-bash">sed -i.bak 's/box/bag/g' myfile.txt
+</code></pre>
+<p>The above command will save your changes to the <strong>myfile.txt</strong> file, but also creates a backup of the original file with a <strong>.bak</strong> extension in the same directory. So the backup created from the command above will be <strong>myfile.txt.bak</strong>.</p>
+<p>Running <code>cat myfile.txt</code> gets you:</p>
+<pre>
+This is my <b>bag</b>.
+It is mine.
+My <b>bag</b> is big, it is a big <b>bag</b>.
+My <b>bag</b> is red, my <b>bag</b> is strong, my <b>bag</b> is the best.
+My mother bought it for me.
+Let's go to the <b>sandbag</b> to play with my <b>bag</b>.
+</pre>
+
+<p>Running <code>cat myfile.txt.bak</code> gets you:</p>
+<pre>
+This is my <b>box</b>.
+It is mine.
+My <b>box</b> is big, it is a big <b>box</b>.
+My <b>box</b> is red, my <b>box</b> is strong, my <b>box</b> is the best.
+My mother bought it for me.
+Let's go to the <b>sandbox</b> to play with my <b>box</b>.
+</pre>
+
+<p>You can see that <strong>myfile.txt</strong> is permanently altered while <strong>myfile.txt.bak</strong> contains its original content.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Now you know the different ways of using <code>sed</code> to make basic substitutions in text files in the linux command line, how to make multiple sed changes in one entry, and how to save your changes permanently.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": "search.suggest search.highlight content.tabs.link content.tooltips navigation.indexes navigation.tabs.sticky navigation.instant", "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+    
+  </body>
+</html>
