@@ -8,8 +8,15 @@
       
       
       
+      
+        <link rel="prev" href="../date-calculator/">
+      
+      
+        <link rel="next" href="../sedfordevto/">
+      
+      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
     
     
       
@@ -17,18 +24,17 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1d29e8d0.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bcfcd587.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#7e56c2">
-        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
+
+
     
+    
+      
     
     
       
@@ -42,10 +48,11 @@
     
       <link rel="stylesheet" href="../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -56,9 +63,8 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
   
-    
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -80,7 +86,7 @@
 
   
 
-<header class="md-header md-header--lifted" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="Manny" class="md-header__button md-logo" aria-label="Manny" data-md-component="logo">
       
@@ -89,6 +95,7 @@
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
+      
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
@@ -108,9 +115,13 @@
       </div>
     </div>
     
+      
+    
+    
     
     
       <label class="md-header__button md-icon" for="__search">
+        
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
@@ -119,12 +130,15 @@
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
+        
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -138,7 +152,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -151,19 +165,24 @@
     
       
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
   
   
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
 
-
-  <li class="md-tabs__item">
-    <a href=".." class="md-tabs__link">
-      Home
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
@@ -171,16 +190,20 @@
   
     
   
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../date-calculator/" class="md-tabs__link">
+          
+  
+    
+  
+  Blog
 
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
-        Blog
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -206,6 +229,7 @@
                   <div class="md-sidebar__inner">
                     
 
+
   
 
 
@@ -224,14 +248,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        Home
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
       </a>
     </li>
   
@@ -239,62 +268,111 @@
     
       
       
+  
+  
+    
+  
+  
+  
+    
+    
       
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
 
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
-      
-      
-      
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
-          
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_2">
-          Blog
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Blog" data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
-          <span class="md-nav__icon md-icon"></span>
-          Blog
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../date-calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Date Calculator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
   
   
     
+  
   
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Understanding Block Storage and Object Storage
+          
+  
+  <span class="md-ellipsis">
+    Understanding Block Storage and Object Storage
+  </span>
+  
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Understanding Block Storage and Object Storage
+        
+  
+  <span class="md-ellipsis">
+    Understanding Block Storage and Object Storage
+  </span>
+  
+
       </a>
       
         
@@ -314,14 +392,18 @@
       
         <li class="md-nav__item">
   <a href="#introduction" class="md-nav__link">
-    Introduction
+    <span class="md-ellipsis">
+      Introduction
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#block-storage" class="md-nav__link">
-    Block Storage
+    <span class="md-ellipsis">
+      Block Storage
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Block Storage">
@@ -329,21 +411,27 @@
         
           <li class="md-nav__item">
   <a href="#advantages-of-block-storage" class="md-nav__link">
-    Advantages of Block Storage
+    <span class="md-ellipsis">
+      Advantages of Block Storage
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#disadvantages-of-block-storage" class="md-nav__link">
-    Disadvantages of Block Storage
+    <span class="md-ellipsis">
+      Disadvantages of Block Storage
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#use-cases-for-block-storage" class="md-nav__link">
-    Use cases for Block Storage
+    <span class="md-ellipsis">
+      Use cases for Block Storage
+    </span>
   </a>
   
 </li>
@@ -355,7 +443,9 @@
       
         <li class="md-nav__item">
   <a href="#object-storage" class="md-nav__link">
-    Object Storage
+    <span class="md-ellipsis">
+      Object Storage
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Object Storage">
@@ -363,21 +453,27 @@
         
           <li class="md-nav__item">
   <a href="#advantages-of-object-storage" class="md-nav__link">
-    Advantages of Object Storage
+    <span class="md-ellipsis">
+      Advantages of Object Storage
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#disadvantages-of-object-storage" class="md-nav__link">
-    Disadvantages of Object Storage
+    <span class="md-ellipsis">
+      Disadvantages of Object Storage
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#use-cases-for-object-storage" class="md-nav__link">
-    Use cases for Object Storage
+    <span class="md-ellipsis">
+      Use cases for Object Storage
+    </span>
   </a>
   
 </li>
@@ -389,14 +485,18 @@
       
         <li class="md-nav__item">
   <a href="#block-storage-vs-object-storage" class="md-nav__link">
-    Block Storage vs Object Storage
+    <span class="md-ellipsis">
+      Block Storage vs Object Storage
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
-    Conclusion
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
   </a>
   
 </li>
@@ -408,24 +508,32 @@
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
-      <a href="../sed/" class="md-nav__link">
-        Text Substitution with SED
+      <a href="../sedfordevto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Text Substitution With the sed Command in Linux
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -458,14 +566,18 @@
       
         <li class="md-nav__item">
   <a href="#introduction" class="md-nav__link">
-    Introduction
+    <span class="md-ellipsis">
+      Introduction
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#block-storage" class="md-nav__link">
-    Block Storage
+    <span class="md-ellipsis">
+      Block Storage
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Block Storage">
@@ -473,21 +585,27 @@
         
           <li class="md-nav__item">
   <a href="#advantages-of-block-storage" class="md-nav__link">
-    Advantages of Block Storage
+    <span class="md-ellipsis">
+      Advantages of Block Storage
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#disadvantages-of-block-storage" class="md-nav__link">
-    Disadvantages of Block Storage
+    <span class="md-ellipsis">
+      Disadvantages of Block Storage
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#use-cases-for-block-storage" class="md-nav__link">
-    Use cases for Block Storage
+    <span class="md-ellipsis">
+      Use cases for Block Storage
+    </span>
   </a>
   
 </li>
@@ -499,7 +617,9 @@
       
         <li class="md-nav__item">
   <a href="#object-storage" class="md-nav__link">
-    Object Storage
+    <span class="md-ellipsis">
+      Object Storage
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Object Storage">
@@ -507,21 +627,27 @@
         
           <li class="md-nav__item">
   <a href="#advantages-of-object-storage" class="md-nav__link">
-    Advantages of Object Storage
+    <span class="md-ellipsis">
+      Advantages of Object Storage
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#disadvantages-of-object-storage" class="md-nav__link">
-    Disadvantages of Object Storage
+    <span class="md-ellipsis">
+      Disadvantages of Object Storage
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#use-cases-for-object-storage" class="md-nav__link">
-    Use cases for Object Storage
+    <span class="md-ellipsis">
+      Use cases for Object Storage
+    </span>
   </a>
   
 </li>
@@ -533,14 +659,18 @@
       
         <li class="md-nav__item">
   <a href="#block-storage-vs-object-storage" class="md-nav__link">
-    Block Storage vs Object Storage
+    <span class="md-ellipsis">
+      Block Storage vs Object Storage
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
-    Conclusion
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
   </a>
   
 </li>
@@ -553,72 +683,73 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
 
-<h1 id="understanding-block-storage-and-object-storage"><strong>Understanding Block Storage and Object Storage</strong></h1>
-<h2 id="introduction"><strong>Introduction</strong></h2>
+<h1 id="understanding-block-storage-and-object-storage">Understanding Block Storage and Object Storage</h1>
+<h3 id="introduction">Introduction</h3>
 <p><img alt="Image" src="../img/storage.jpg" />  </p>
-<p>In the world of IT, there are different storage solutions available to satisfy the different storage needs businesses will have for their data. Let us look at two popular storage solutions, Block Storage and Object Storage, go over their strengths and weaknesses, and see how they compare to each other.</p>
-<h2 id="block-storage"><strong>Block Storage</strong></h2>
+<p>In the world of IT, there are different storage solutions available to satisfy the different storage needs businesses have for their data. Let us look at two popular storage solutions, <strong>Block Storage</strong> and <strong>Object Storage</strong>, go over their strengths and weaknesses, and see how they compare to each other.</p>
+<h2 id="block-storage">Block Storage</h2>
 <p><img alt="Screenshot" src="../img/block_storage.png" /><br />
 Block storage is a traditional storage format wherein data is broken up into pieces and stored inside blocks of fixed equal sizes. These blocks come with unique identifiers and very limited metadata.</p>
-<p>The unique identifiers are important because they allow for the blocks to be stored across multiple physical storage devices in a network instead of storing them in just one device. They also make it possible for the blocks to be easily tracked and reassembled when a user wants to access that data.</p>
-<p>The software used to provision, divide, and track these blocks (i.e., the software used to manage this storage format) is typically completely separate from the physical storage device(s). These software tools are referred to as block storage management tools. Some examples are:  </p>
+<p>The unique identifiers are important because they allow for the blocks to be stored across multiple physical storage devices in a network instead of being stored on just one device. They also make it possible for the blocks to be easily tracked and reassembled when a user wants to access that data.</p>
+<p>The software used to provision, divide, and track these blocks (i.e. the software used to manage this storage format) is typically completely separate from the physical storage device(s). These software tools are referred to as block storage management tools. Some examples of them are:  </p>
 <ul>
 <li>Amazon Elastic Block Store (EBS)  </li>
-<li>DigitalOcean  </li>
-<li>Serverspace  </li>
-<li>Vultr  </li>
-<li>Upcloud  </li>
+<li>DigitalOcean Volumes Block Storage</li>
+<li>Serverspace Block Storage</li>
+<li>Vultr Block Storage</li>
+<li>Azure Disk Storage  </li>
 </ul>
-<p>Block storage volumes can be attached to a system locally, connected over a SAN (Storage Area Network) or utilized in a cloud environment. Communication between the system and the block storage device is usually done via storage protocols like FC (Fibre Channel), FCoE (Fibre Channel over Ethernet), iSCSI (Internet Small Computers System Interface), etc.</p>
-<p>Block storage volumes provisioned remotely are like individual hard drives and are usually accessed at the OS level.</p>
+<p>Block storage volumes can be attached to a computer locally, connected over a SAN (Storage Area Network) or utilized in a cloud environment. Communication between the computer and the block storage device is usually done via storage protocols like FC (Fibre Channel), FCoE (Fibre Channel over Ethernet), iSCSI (Internet Small Computers System Interface), etc.</p>
+<p>Block storage volumes provisioned remotely are configured to be like individual hard drives and are usually accessed at the OS level.</p>
 <p>A block storage volume in a cloud environment will typically be decoupled from its server, and this key feature allows you to shut down a server and still retain the data in its storage volume which can then be reattached to another server, all the while incurring zero data loss.</p>
-<p>Block storage does not come with built-in resiliency measures but this can be solved by using erasure coding, RAID, etc., to achieve data redundancy, increased performance and other benefits. These measures can be deployed generally or specifically for mission-critical workloads.</p>
-<h3 id="advantages-of-block-storage"><strong>Advantages of Block Storage</strong></h3>
+<p>Block storage does not come with built-in resiliency measures but this can be solved by using erasure coding, RAID, etc., to achieve data redundancy, increased performance and other benefits. These measures may be deployed generally or specifically for mission-critical workloads.</p>
+<h3 id="advantages-of-block-storage">Advantages of Block Storage</h3>
 <ol>
 <li>
 <p>Block storage volumes are flexible. This means they can be configured to serve a variety of business needs. You can format it with a file system like FAT32, EXT 3, EXT 4, and NTFS. You can set up a database to write straight to your block storage device. You can connect multiple block storage devices to achieve a RAID (Redundant Array of Independent Disks) volume.</p>
 </li>
 <li>
-<p>Boot volumes are block volumes that have been configured to boot an OS for the server they are attached to and this is a very important feature in the cloud space.</p>
+<p>Boot volumes are block volumes that have been configured to boot an OS for the server they are attached to, and this is a very important feature in the cloud space.</p>
 </li>
 <li>
 <p>Block storage is known for providing consistently high IOPS (Input/Output per Second).</p>
 </li>
 <li>
-<p>Data delivery with reliable low latency is a strength of block storage. However, a factor that can affect this is the distance between the block storage volume and the application using it, with greater distances leading to higher latency.</p>
+<p>Data delivery with reliable low latency is guaranteed with block storage. However, a factor that may affect this is the physical distance between the block storage volume and the application using it, with greater distances leading to higher latency.</p>
 </li>
 <li>
 <p>With block storage, you can make edits to specific data blocks without having to re-upload the entire data file.</p>
 </li>
 <li>
-<p>It also allows for simple management of access privileges.</p>
+<p>It allows for simple management of access privileges.</p>
 </li>
 </ol>
-<h3 id="disadvantages-of-block-storage"><strong>Disadvantages of Block Storage</strong></h3>
+<h3 id="disadvantages-of-block-storage">Disadvantages of Block Storage</h3>
 <ol>
 <li>
-<p>Block storage is a relatively more costly form of storage, this is because it demands significant investment upfront along with a highly skilled maintenance staff. </p>
+<p>Block storage is a relatively more costly form of storage. This is because it demands significant investment upfront, along with a highly skilled maintenance staff. </p>
 </li>
 <li>
-<p>While block storage is highly scalable, when it begins to scale to terabytes and beyond, its complexity increases making it harder to locate a specific data file.</p>
+<p>While block storage is highly scalable, when it begins to scale to terabytes and beyond, its complexity also increases, making it harder to locate specific data files.</p>
 </li>
 <li>
 <p>Block storage’s limited metadata capabilities make it impossible to perform advanced search operations.</p>
 </li>
 </ol>
-<h3 id="use-cases-for-block-storage"><strong>Use cases for Block Storage</strong></h3>
+<h3 id="use-cases-for-block-storage">Use cases for Block Storage</h3>
 <ol>
 <li>
 <p>Transactional databases and relational databases in general require low latency, high IOPs data delivery and the ability to perform incremental updates to data files. Block storage excels in these areas.</p>
 </li>
 <li>
-<p>Mission-critical workloads are often run with block storage because of its high performance and swifty data delivery.</p>
+<p>Mission-critical workloads are often run with block storage because of its high performance and reliably swift data delivery.</p>
 </li>
 <li>
 <p>Virtual machines require boot volumes and general block storage volumes to be able to function.</p>
@@ -627,28 +758,29 @@ Block storage is a traditional storage format wherein data is broken up into pie
 <p>Block storage volumes can be organized into RAID volumes.</p>
 </li>
 <li>
-<p>Block storage is necessary for programs that need server-side processing such as .NET, Java, etc.</p>
+<p>Block storage is necessary for programs that need server-side processing such as programs written in .NET, Java, etc.</p>
 </li>
 <li>
 <p>Block storage is very instrumental when working with containers because block volumes allow you to preserve a container's data beyond the container’s typical lifespan.</p>
 </li>
 </ol>
-<h2 id="object-storage"><strong>Object Storage</strong></h2>
+<h2 id="object-storage">Object Storage</h2>
 <p><img alt="Screenshot" src="../img/object_storage.png" /></p>
-<p>Object storage is a more recent form of data storage that rose to popularity in the early 2000s because of how well it helped enterprises around the world to store and manage the voluminous amounts of unstructured data that was being generated due to the growing internet. Trillions of data units in various formats are generated each year and around 80% of the data on the internet is unstructured. With object storage, each data file is stored fully inside a distinct object, and these objects, which could number in the millions or even billions, are organized in a flat-file structure (as opposed to a hierarchy) and stored in a single-level repository.  </p>
-<p>The abstraction of some of the lower levels of storage is one of the core tenets of object storage. Lower-level storage tasks like creating and managing storage volumes to make the most of disk space or configuring RAID levels to handle disk failure no longer need to be carried out. As a result, rather than as blocks, data is accessed and controlled as objects. An object typically contains:</p>
+<p>Object storage is a more recent form of data storage that rose to popularity in the early 2000s because of how well it helped enterprises around the world to store and manage the voluminous amounts of unstructured data being generated as a result of the growing internet. Trillions of data units in a variety of formats are generated on the internet every year and around 80% of that data is unstructured. </p>
+<p>With object storage, each data file is stored wholly inside a distinct object, and these objects, which could number in the millions or even billions, are organized in a flat-file structure (as opposed to a hierarchy) and stored in a single-level repository.  </p>
+<p>The abstraction of some of the lower levels of storage is one of the core tenets of object storage. Lower-level storage tasks like creating and managing storage volumes to make the most of disk space or configuring RAID levels to handle disk failure no longer need to be carried out. As a result, rather than accessed as blocks, data is accessed and controlled as objects. An object typically contains:</p>
 <ul>
 <li>A particular data file.</li>
 <li>Metadata which provides the necessary information about the data file in the object.</li>
 <li>A Globally Unique Identifier (GUID)</li>
-<li>Attributes: these provide information about the object itself, information about which users can download the object, delete the object, etc.</li>
+<li>Attributes: these provide information about the object itself, information about what users can download the object, delete the object, etc.</li>
 </ul>
-<p>A key function of object storage is its customizable metadata, there is no limit to the amount or nature of contextual information about the data that can be added to it. The size of the metadata of a data file can even be larger than the size of the data file itself. This then allows for a more thorough classification and management of the data files which proves important when advanced search and analytics operations need to be undertaken.</p>
-<p>The objects are usually accessed via an API (Application Programming Interface) or directly by HTTP(S), they are tracked down by their GUIDs and the data delivery is done by TCP/IP. This ensures that the ease of accessing individual data files remains relatively the same irrespective of the scale of the entire storage space. </p>
-<p>And object storage is highly scalable, you could scale your storage up to even petabytes and beyond while still maintaining data integrity. You can scale out simply by adding more nodes to your storage cluster and will usually only be required to pay for the storage space you need.</p>
-<p>Object storage has inbuilt resiliency measures to protect your data. Data stored in objects are replicated multiple times and stored across several storage devices, so your data will always be accessible to you even if there is a fault with one or even several of these storage devices. In case of corruption of one object, you can simply access one of the separately stored copies. This ensures high availability of your data.</p>
-<p>You can also enable object versioning which is a feature that lets you have many different versions of your data. In the case of accidental deletions or updates, you can simply access the previous versions. But under normal circumstances, the most important version to your business or project will be the latest version.</p>
-<h3 id="advantages-of-object-storage"><strong>Advantages of Object Storage</strong></h3>
+<p>A key function of object storage is its customizable metadata. Tthere is no limit to the amount or nature of contextual information about the data that can be added to it. The size of the metadata of a data file can even be larger than the size of the data file itself. This then allows for a more thorough classification and management of the data files which prove important when advanced search and analytics operations need to be undertaken.</p>
+<p>These objects are usually accessed via an API (Application Programming Interface) or directly by HTTP(S), they are tracked down by their GUIDs and the data delivery is done by TCP/IP. This ensures that the ease of accessing individual data files remains relatively the same irrespective of the scale of the entire storage space. </p>
+<p>And object storage is highly scalable, you could scale your storage up to even petabytes and beyond while still maintaining data integrity. You scale out simply by adding more nodes to your storage cluster and will usually only be required to pay for the storage space you need.</p>
+<p>Object storage has inbuilt resiliency measures to protect your data. Data stored in objects are replicated multiple times and stored across several storage devices, so your data will always be accessible to you even if there is a fault with one or even several of these storage devices. In case of a corruption of one object, you can simply access one of the separately stored copies. This guarantees high availability of your data.</p>
+<p>You can also enable object versioning, which is a feature that lets you track many different versions of your data. In the case of accidental deletions or updates, you can simply access the previous versions. Though under normal circumstances, the most important version to your business or project will be the latest version of the object.</p>
+<h3 id="advantages-of-object-storage">Advantages of Object Storage</h3>
 <ol>
 <li>
 <p>It provides limitless scalability.</p>
@@ -660,7 +792,7 @@ Block storage is a traditional storage format wherein data is broken up into pie
 <p>Its powerful metadata capabilities allow for extensive and detailed search and analytics operations.</p>
 </li>
 <li>
-<p>It comes with inbuilt resiliency protocols to ensure high availability of data.</p>
+<p>It comes with inbuilt resiliency protocols to ensure high availability of your data.</p>
 </li>
 <li>
 <p>Object storage is more cost-effective than the other storage solutions on the market.</p>
@@ -669,13 +801,13 @@ Block storage is a traditional storage format wherein data is broken up into pie
 <p>Object storage has the added benefit of abstracting away the maintenance of the underlying physical storage devices.</p>
 </li>
 <li>
-<p>Object storage allows for versioning.</p>
+<p>Object storage allows for versioning and its attendant benefits.</p>
 </li>
 </ol>
-<h3 id="disadvantages-of-object-storage"><strong>Disadvantages of Object Storage</strong></h3>
+<h3 id="disadvantages-of-object-storage">Disadvantages of Object Storage</h3>
 <ol>
 <li>
-<p>Objects in object storage are immutable, meaning if you try to make changes to a data file in an object, you would have to re-upload the new file with its changes in a new object, as such it is terrible for storing data that would require consistent updates.</p>
+<p>The Objects in object storage are immutable. THis means if you try to make changes to a data file in an object, you would have to re-upload the new file with its changes to a new object. For this reason, it is a terrible choice for storing data that requires consistent updates.</p>
 </li>
 <li>
 <p>Its performance is relatively slower than other storage solutions, this is why it is used mostly for cold storage.</p>
@@ -684,7 +816,7 @@ Block storage is a traditional storage format wherein data is broken up into pie
 <p>Object storage cannot be accessed directly at the OS level without significant degradation in performance.</p>
 </li>
 </ol>
-<h3 id="use-cases-for-object-storage"><strong>Use cases for Object Storage</strong></h3>
+<h3 id="use-cases-for-object-storage">Use cases for Object Storage</h3>
 <ol>
 <li>
 <p>Object storage is extremely useful in the field of big data analytics, this is due to its high scalability and limitless metadata functions.</p>
@@ -696,16 +828,16 @@ Block storage is a traditional storage format wherein data is broken up into pie
 <p>Object storage makes it easy to store, scale and manage your image files, audio files and other forms of media files with relative ease. It is a popular choice among social media companies, file-sharing sites and streaming services for this very reason.</p>
 </li>
 <li>
-<p>It's extremely useful in disaster recovery plans, this is owing to its inbuilt resiliency protocols.</p>
+<p>It is extremely useful in disaster recovery plans, this is owing to its inbuilt resiliency protocols.</p>
 </li>
 <li>
 <p>It’s a safe and cost-effective option for storing backups and archived files that will be accessed infrequently. In essence, it’s a great choice for cold storage.</p>
 </li>
 <li>
-<p>Most object storage services can also deliver data to your users publicly, and this is why it makes for a great choice when looking to host static websites.</p>
+<p>Most object storage services can also deliver data to your users publicly, this is why it makes for a great choice when looking to host static websites.</p>
 </li>
 </ol>
-<h2 id="block-storage-vs-object-storage"><strong>Block Storage vs Object Storage</strong></h2>
+<h2 id="block-storage-vs-object-storage">Block Storage vs Object Storage</h2>
 <p>Now let’s examine some of the key distinctions between block storage and object storage:  </p>
 <table>
 <thead>
@@ -737,11 +869,11 @@ Block storage is a traditional storage format wherein data is broken up into pie
 </tr>
 <tr>
 <td style="text-align: left;">Block storage requires management and configuration of its volumes.</td>
-<td style="text-align: left;">With object storage the management process is abstracted away.</td>
+<td style="text-align: left;">With object storage the management process is abstracted away by the provider.</td>
 </tr>
 <tr>
 <td style="text-align: left;">The distance between the storage location and the application accessing it can affect latency.</td>
-<td style="text-align: left;">The data can be stored across a wide range of locations with no effect on latency.</td>
+<td style="text-align: left;">The data can be stored across a wide possible range of locations with no effect on latency.</td>
 </tr>
 <tr>
 <td style="text-align: left;">Data is broken up into raw blocks and stored in a hierarchical order.</td>
@@ -753,56 +885,33 @@ Block storage is a traditional storage format wherein data is broken up into pie
 </tr>
 </tbody>
 </table>
-<h2 id="conclusion"><strong>Conclusion</strong></h2>
-<p>Both block storage and object storage have distinct benefits and drawbacks. You can only make the best storage decisions for your business if you’re well informed on the potential uses and associated costs for each of the discussed storage solutions.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>In essence, block storage excels in high performance for frequently accessed, structured data, while object storage shines in scalability and cost-effectiveness for massive archives and unstructured data. Understanding these strengths and the attendant tradeoffs will help you pick the right storage solution for your needs.</p>
 
-              
-            </article>
-            
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
   <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
 
-          </div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Home
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../sed/" class="md-footer__link md-footer__link--next" aria-label="Next: Text Substitution with SED" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Text Substitution with SED
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -824,10 +933,12 @@ Block storage is a traditional storage format wherein data is broken up into pie
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": "search.suggest search.highlight content.tabs.link content.tooltips navigation.indexes navigation.tabs.sticky navigation.instant", "search": "../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+    <script id="__config" type="application/json">{"base": "..", "features": "search.suggest search.highlight content.tabs.link content.tooltips navigation.indexes navigation.tabs.sticky navigation.instant", "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.1e8ae164.min.js"></script>
       
     
   </body>
